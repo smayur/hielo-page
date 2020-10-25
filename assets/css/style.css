@@ -235,12 +235,16 @@ sub { bottom: -.25em; }
     top: 0;
     left: 50%;
     -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
     z-index: 1;
   }
 
-  .logo { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; }
+  .logo { 
+    -webkit-box-flex: 1; 
+    -ms-flex: 1; 
+    flex: 1; 
+  }
 
   .logo a {
     font-size: 1.125em;
@@ -266,15 +270,6 @@ sub { bottom: -.25em; }
     flex: 2; 
   }
 
-  .menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-evenly;
-  }
-
   .menu li a {
     text-transform: uppercase;
     color: var(--main-color);
@@ -283,9 +278,11 @@ sub { bottom: -.25em; }
     transition: var(--time);
   }
 
-  .burger{ display: none; }
+  .burger, 
+  .burger-text, 
+  .hide-menu { display: none; }
 
-  .burger div{
+  .burger div {
     width: 20px;
     height: 3px;
     background: #fff;
@@ -298,7 +295,7 @@ sub { bottom: -.25em; }
 
   .navtoggle .line:first-child { -webkit-transform: rotate(-45deg) translate(-3px,5.5px); -ms-transform: rotate(-45deg) translate(-3px,5.5px); transform: rotate(-45deg) translate(-3px,5.5px); }
   .navtoggle .line:nth-child(2) { opacity: 0; }
-  .navtoggle .line:nth-child(3) { -webkit-transform: rotate(-45deg) translate(-3px,-5.5px); -ms-transform: rotate(45deg) translate(-3px,-5.5px); transform: rotate(45deg) translate(-3px,-5.5px); }
+  .navtoggle .line:nth-child(3) { -webkit-transform: rotate(45deg) translate(-3px,-5.5px); -ms-transform: rotate(45deg) translate(-3px,-5.5px); transform: rotate(45deg) translate(-3px,-5.5px); }
 
   @media screen and (min-width: 768px) {
     .menu li a:hover { font-weight: bold; }
@@ -313,23 +310,21 @@ sub { bottom: -.25em; }
    Banner starts
    ========================================================================== */
 
-   .banner {
-      position: relative; 
-      width: 100%;
-    }
-
-  .banner-img {
-    width: inherit;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4)));
-    background: -o-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  .banner {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+  .banner-img { width: inherit; }
 
   .banner-img img {
     width: inherit;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 80px;
+    background-size: cover;
   }
 
   .banner .wrapper {
@@ -337,14 +332,13 @@ sub { bottom: -.25em; }
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     position: absolute;
-    bottom: 50%;
     left: 50%;
     -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
   }
 
   .banner-text {
@@ -353,14 +347,14 @@ sub { bottom: -.25em; }
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 
   .banner-subheadline {
@@ -408,10 +402,10 @@ sub { bottom: -.25em; }
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 
   .card {
@@ -490,7 +484,12 @@ sub { bottom: -.25em; }
 /* ==========================================================================
     projects stars
    ========================================================================== */
-  .projects { position: relative; }
+  .projects { 
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .projects .wrapper {
     display: -webkit-box;
@@ -500,18 +499,22 @@ sub { bottom: -.25em; }
     -ms-flex-pack: center;
     justify-content: center;
     position: absolute;
-    bottom: 50%;
     left: 50%;
     -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
   }
 
-  .projects-text {
-    margin: 80px 0;
-    text-align: center;
+  .project-img { width: inherit; }
+
+  .project-img img {
+    width: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
+  .projects-text { text-align: center; }
   .projects-subheadline {font-size: 12px;}
   .projects-text .subheadline::after {width: 93%;}
 
@@ -550,8 +553,9 @@ sub { bottom: -.25em; }
 
   .gallery-subheadline { font-size: 0.75em; }
 
-  .gallery-text .subheadline::after { 
-    width: 50%; border-top: 1px solid #799a9a; 
+  .gallery-text .subheadline::after {
+    width: 50%; 
+    border-top: 1px solid #799a9a; 
   }
 
   .gallery-headline {
@@ -566,10 +570,10 @@ sub { bottom: -.25em; }
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -ms-flex-line-pack: justify;
-        align-content: space-between;
+    align-content: space-between;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-bottom: 20px;
@@ -656,8 +660,7 @@ sub { bottom: -.25em; }
    max width 1280 starts
    ========================================================================== */
 
-   @media screen and (max-width: 1280px) {
-    .banner .wrapper { bottom: 45%; }
+  @media screen and (max-width: 1280px) {
     .banner-headline { font-size: 6em; }
   }
 
@@ -669,8 +672,7 @@ sub { bottom: -.25em; }
    max width 1024 starts
    ========================================================================== */
 
-   @media screen and (max-width: 1024px) {
-    .banner .wrapper { bottom: 40%; }
+  @media screen and (max-width: 1024px) {
     .banner-headline { font-size: 5.5em; }
   }
 
@@ -684,13 +686,18 @@ sub { bottom: -.25em; }
 
   @media screen and (max-width: 995px) {
 
-    .burger{
+    .burger-text {
+      margin-right: 10px;
       display: block;
-      float: right;
+      color: #fff;
+    }
+
+    .burger {
+      display: block;
       cursor: pointer;
     }
     
-    .menu {
+    .show-menu {
       width: 100%;
       background-color: rgba(0,0,0,0.8);
       position: absolute;
@@ -707,8 +714,6 @@ sub { bottom: -.25em; }
 
     .menu li { display: block; }
     .menu li a { font-size: 0.875em;}
-    .burger-text { color: #fff;}
-    .banner .wrapper { bottom: 35%; }
     .banner-headline { font-size: 5em; }
     
   }
@@ -722,9 +727,13 @@ sub { bottom: -.25em; }
    ========================================================================== */
 
    @media screen and (max-width: 768px) {
-    
-    .logo, .navbar { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; }
-    .banner .wrapper { bottom: 30%; }
+    .logo, 
+    .navbar { 
+      -webkit-box-flex: 1; 
+      -ms-flex: 1; 
+      flex: 1; 
+    }
+
     .banner-headline { font-size: 3em; }
     .banner-subheadline { font-size: 0.75em; }
     .banner-subheadline::after { margin: 20px 0px; }
@@ -746,7 +755,6 @@ sub { bottom: -.25em; }
    ========================================================================== */
 
    @media screen and (max-width: 540px) {
-    .banner .wrapper { bottom: 20%; }
     .banner-headline { font-size: 2.5em; }
     .banner-subheadline { font-size: 0.625em; }
     .banner-subheadline::after { margin: 10px 0px; }
@@ -764,7 +772,6 @@ sub { bottom: -.25em; }
    @media screen and (max-width: 320px) {
     .logo a { padding: 5px; }
     .menu li a { padding: 10px; }
-    .banner .wrapper { bottom: 10%; }
     .banner-headline { font-size: 2em; }
   }
 
