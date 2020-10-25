@@ -410,6 +410,8 @@ sub { bottom: -.25em; }
     display: inline-block;
   }
 
+  .slider-bullets .active { background-color: #fff; }
+
 /* ==========================================================================
    Banner ends
    ========================================================================== */
@@ -784,6 +786,11 @@ sub { bottom: -.25em; }
     .banner-headline { font-size: 2.5em; }
     .banner-subheadline { font-size: 0.625em; }
     .banner-subheadline::after { margin: 10px 0px; }
+    .slider-bullets { bottom: 20px; }
+    .dot {
+      height: 11px;
+      width: 11px;
+    }
     .media-icons { width: 35%; }
   }
 
@@ -799,6 +806,11 @@ sub { bottom: -.25em; }
     .logo a { padding: 5px; }
     .menu li a { padding: 10px; }
     .banner-headline { font-size: 2em; }
+    .slider-bullets { bottom: 10px; }
+    .dot {
+      height: 9px;
+      width: 9px;
+    }
   }
 
 /* ==========================================================================
