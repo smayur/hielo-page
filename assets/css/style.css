@@ -279,8 +279,7 @@ sub { bottom: -.25em; }
   }
 
   .burger, 
-  .burger-text, 
-  .hide-menu { display: none; }
+  .burger-text { display: none; }
 
   .burger div {
     width: 20px;
