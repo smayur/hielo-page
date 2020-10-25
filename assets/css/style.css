@@ -203,7 +203,7 @@ sub { bottom: -.25em; }
   .subheadline::after {
     content: '';
     width: 80%;
-    border-top: 1px solid #799a9a;
+    border-top: 1px solid #fff;
     margin: 10px 0;
     display: block;
     position: relative;
@@ -234,11 +234,13 @@ sub { bottom: -.25em; }
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
     z-index: 1;
   }
 
-  .logo { flex: 1; }
+  .logo { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; }
 
   .logo a {
     font-size: 1.125em;
@@ -256,7 +258,7 @@ sub { bottom: -.25em; }
     color: #799a9a;
   }
 
-  .navbar { flex: 2; }
+  .navbar { -webkit-box-flex: 2; -ms-flex: 2; flex: 2; }
 
   .menu {
     display: -webkit-box;
@@ -264,7 +266,7 @@ sub { bottom: -.25em; }
     display: flex;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 
   .menu li a {
@@ -273,6 +275,19 @@ sub { bottom: -.25em; }
     -webkit-transition: var(--time);
     -o-transition: var(--time);
     transition: var(--time);
+  }
+
+  .burger{ display: none; }
+
+  .burger div{
+    width: 20px;
+    height: 3px;
+    background: #fff;
+    margin: 3px;
+    border-radius: 50px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
   }
 
   @media screen and (min-width: 768px) {
@@ -289,29 +304,61 @@ sub { bottom: -.25em; }
    ========================================================================== */
 
    .banner {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(/assets/images/slide01.jpg);
-    background: -o-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/assets/images/slide01.jpg);
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/assets/images/slide01.jpg);
+      position: relative; 
+      width: 100%;
+    }
+
+  .banner-img {
+    width: inherit;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4)));
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  }
+
+  .banner-img img {
+    width: inherit;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 80px;
+  }
+
+  .banner .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 
   .banner-text {
-    padding: 250px 0;
-    position: relative;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .banner-subheadline {
     color: #799a9a;
-    font-size: 14px;
+    font-size: 0.875em;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-align: center;
   }
 
   .banner-subheadline::after {
@@ -347,9 +394,14 @@ sub { bottom: -.25em; }
 
   .about .wrapper { 
     padding: 7.8% 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 
   .card {
@@ -428,14 +480,7 @@ sub { bottom: -.25em; }
 /* ==========================================================================
     projects stars
    ========================================================================== */
-   .projects {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(/assets/images/slide03.jpg);
-    background: -o-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/assets/images/slide03.jpg);
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/assets/images/slide03.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  .projects { position: relative; }
 
   .projects .wrapper {
     display: -webkit-box;
@@ -444,6 +489,12 @@ sub { bottom: -.25em; }
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 
   .projects-text {
@@ -488,7 +539,10 @@ sub { bottom: -.25em; }
   }
 
   .gallery-subheadline { font-size: 0.75em; }
-  .gallery-text .subheadline::after { width: 50%; }
+
+  .gallery-text .subheadline::after { 
+    width: 50%; border-top: 1px solid #799a9a; 
+  }
 
   .gallery-headline {
     color: #000000;
@@ -501,8 +555,11 @@ sub { bottom: -.25em; }
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-bottom: 20px;
@@ -586,10 +643,42 @@ sub { bottom: -.25em; }
    ========================================================================== */
 
 /* ==========================================================================
+   max width 1280 starts
+   ========================================================================== */
+
+   @media screen and (max-width: 1280px) {
+    .banner .wrapper { bottom: 45%; }
+    .banner-headline { font-size: 6em; }
+  }
+
+/* ==========================================================================
+  max width 1280 ends
+  ========================================================================== */
+
+/* ==========================================================================
+   max width 1024 starts
+   ========================================================================== */
+
+   @media screen and (max-width: 1024px) {
+    .banner .wrapper { bottom: 40%; }
+    .banner-headline { font-size: 5.5em; }
+  }
+
+/* ==========================================================================
+  max width 1024 ends
+  ========================================================================== */
+
+/* ==========================================================================
    max width 995 starts
    ========================================================================== */
 
   @media screen and (max-width: 995px) {
+
+    .burger{
+      display: block;
+      float: right;
+      cursor: pointer;
+    }
     
     .menu {
       width: 100%;
@@ -608,7 +697,11 @@ sub { bottom: -.25em; }
 
     .menu li { display: block; }
     .menu li a { font-size: 0.875em;}
-
+    .navtoggle .line1 { -webkit-transform: rotate(-45deg) translate(-3px,5.5px); -ms-transform: rotate(-45deg) translate(-3px,5.5px); transform: rotate(-45deg) translate(-3px,5.5px); }
+    .navtoggle .line2 { opacity: 0; }
+    .navtoggle .line3 { -webkit-transform: rotate(45deg) translate(-3px,-5.5px); -ms-transform: rotate(45deg) translate(-3px,-5.5px); transform: rotate(45deg) translate(-3px,-5.5px); }
+    .banner .wrapper { bottom: 35%; }
+    .banner-headline { font-size: 5em; }
     
   }
 
@@ -621,6 +714,12 @@ sub { bottom: -.25em; }
    ========================================================================== */
 
    @media screen and (max-width: 768px) {
+    
+    .logo, .navbar { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; }
+    .banner .wrapper { bottom: 30%; }
+    .banner-headline { font-size: 3em; }
+    .banner-subheadline { font-size: 0.75em; }
+    .banner-subheadline::after { margin: 20px 0px; }
     .card { width: 100%; }
     .card:last-child { margin-top: 10%;}
     .card-headline { font-size: 1.25em; }
@@ -638,10 +737,29 @@ sub { bottom: -.25em; }
    max width 540 starts
    ========================================================================== */
 
-   @media screen and (max-width: 540px) { 
+   @media screen and (max-width: 540px) {
+    .banner .wrapper { bottom: 20%; }
+    .banner-headline { font-size: 2.5em; }
+    .banner-subheadline { font-size: 0.625em; }
+    .banner-subheadline::after { margin: 10px 0px; }
     .media-icons { width: 35%; }
   }
 
 /* ==========================================================================
   max width 540 ends
+  ========================================================================== */
+
+/* ==========================================================================
+   max width 320 starts
+   ========================================================================== */
+
+   @media screen and (max-width: 320px) {
+    .logo a { padding: 5px; }
+    .menu li a { padding: 10px; }
+    .banner .wrapper { bottom: 10%; }
+    .banner-headline { font-size: 2em; }
+  }
+
+/* ==========================================================================
+  max width 320 ends
   ========================================================================== */
