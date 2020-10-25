@@ -696,6 +696,8 @@ sub { bottom: -.25em; }
       display: block;
       cursor: pointer;
     }
+
+    .hide-menu { display: none; }
     
     .show-menu {
       width: 100%;
